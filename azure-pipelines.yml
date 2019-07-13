@@ -25,4 +25,4 @@ jobs:
           **\*test*.dll
           !**\*TestAdapter.dll
           !**\obj\**
-      searchFolder: '$(System.DefaultWorkingDirectory)'
+        searchFolder: '$(System.DefaultWorkingDirectory)'
