@@ -3,5 +3,5 @@ jobs:
    pool:
      vmImage: ubuntu-18.04
    steps:
-    - displayName: make
-      script: 'cd Farmhash.Benchmarks && make benchmark-farmhash'
+    - script: 'cd Farmhash.Benchmarks && make benchmark-farmhash'
+      displayName: make
