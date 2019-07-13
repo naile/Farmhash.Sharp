@@ -15,7 +15,7 @@ jobs:
       inputs:
         command: 'restore'
         restoreSolution: 'Classic/packages.config'
-        restoreDirectory: 'packages'
+        restoreDirectory: '../packages'
     - task: MSBuild@1
       inputs:
         solution: 'Classic/Classic.csproj'
