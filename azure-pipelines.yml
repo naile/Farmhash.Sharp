@@ -1,5 +1,5 @@
 jobs:
- - job: 'Farmhash cpp'
+ - job: 'farmhash_cpp'
    pool:
      vmImage: ubuntu-18.04
    steps:
