@@ -13,7 +13,16 @@ jobs:
    steps:
     - task: NuGetCommand@2
       inputs:
-        arguments: 'Classic/packages.config'
+        command: 'restore'
+        restoreSolution: 'Classic/packages.config'
     - task: MSBuild@1
       inputs:
-        arguments: 'Classic/Classic.csproj'
+        solution: 'Classic/Classic.csproj'
+    - task: VSTest@2
+      inputs:
+        testSelector: 'testAssemblies'
+        testAssemblyVer2: |
+          **\*test*.dll
+          !**\*TestAdapter.dll
+          !**\obj\**
+      searchFolder: '$(System.DefaultWorkingDirectory)'
