@@ -14,12 +14,17 @@ jobs:
     - task: NuGetCommand@2
       inputs:
         command: 'restore'
-        restoreSolution: 'Classic/packages.config'
+        restoreSolution: 'Farmhash.Sharp/Farmhash.Sharp.csproj'
         restoreDirectory: '../packages'
     - task: MSBuild@1
       inputs:
         solution: 'Farmhash.Sharp/Farmhash.Sharp.csproj'
         msbuildArguments: '/p:TargetFramework=netstandard1.0'
+    - task: NuGetCommand@2
+      inputs:
+        command: 'restore'
+        restoreSolution: 'Classic/packages.config'
+        restoreDirectory: '../packages'
     - task: MSBuild@1
       inputs:
         solution: 'Classic/Classic.csproj'
