@@ -18,6 +18,10 @@ jobs:
         restoreDirectory: '../packages'
     - task: MSBuild@1
       inputs:
+        solution: 'Farmhash.Sharp/Farmhash.Sharp.csproj'
+        msbuildArguments: '/p:TargetFramework=netstandard1.0'
+    - task: MSBuild@1
+      inputs:
         solution: 'Classic/Classic.csproj'
     - task: VSTest@2
       inputs:
